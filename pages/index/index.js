@@ -1,54 +1,136 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
+// pages/index/index.js
 Page({
+
+  /**
+   * 页面的初始数据
+   * img：照片
+   * qrCodeImg：微信二维码
+   * imgMode：图片模式
+   * callCount：统计电话被打次数
+   * isShow：切换至添加微信号
+   * info：个人信息数据
+   */
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+    img: '../../images/mypicture/me.png',
+    qrCodeImg: '../../images/mypicture/qrCode.jpeg',
+    imgMode: 'widthFix',
+    callCount: 0,
+    isShow: "none",
+    info: [
+      {
+        id: '姓名',
+        icon: '../../images/icons/icon_patriarch.png',
+        name: "蒯煜",
+      },
+      {
+        id: '院校',
+        icon: '../../images/icons/school.png',
+        name: '南通大学-自动化'
+      },
+      {
+        id: '手机号',
+        icon: '../../images/icons/icon_mobilephone.png',
+        name: '15601480793'
+      },
+      {
+        id: '微信',
+        icon: '../../images/icons/icon_wechat.png',
+        name: 'mywx_ky'
+      },
+      {
+        id: '邮箱',
+        icon: '../../images/icons/icon_dmail.png',
+        name: 'ky.kyy@qq.com'
+      },
+      {
+        id: 'github',
+        icon: '../../images/icons/github.png',
+        name: 'KuaiYu95'
+      },
+      {
+        id: '所在地',
+        icon: '../../images/icons/icon_GPS.png',
+        name: '南京市玄武区'
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
+    ]
+  },
+  /**
+   * 个人信息数据点击效果
+   * 手机号：拨打电话
+   * 微信：切换至微信二维码界面
+   * GitHub：弹窗-复制
+   * 其余：点击复制
+   */
+  callMe: function(e) {
+    const id = e.target.dataset.id
+    const name = e.target.dataset.name
+    switch(id) {
+      case '手机号': 
+        wx.makePhoneCall({
+          phoneNumber: name,
+          complete: () => {
+            this.setData({
+              callCount: this.data.callCount + 1
+            })
+          }
+        })
+        return
+      case '微信': 
+        this.setData({
+          isShow: "block"
+        }, () => {
+          console.log(this.data.isShow)
+        })
+        return
+      case 'github': 
+        wx.showModal({
+          title: 'Github链接',
+          content: 'https://github.com/KuaiYu95',
+          confirmText: '复制',
+          success: (res) => {
+            if (res.confirm) {
+              wx.setClipboardData({
+                data: 'https://github.com/KuaiYu95',
+                success(res) {
+                  wx.getClipboardData({
+                    success(res) {
+                      console.log(res.data)
+                    }
+                  })
+                }
+              })
+            }
+          }
+        })
+        return
+      default: 
+        wx.setClipboardData({
+          data: name,
+          success(res) {
+            wx.getClipboardData({
+              success(res) {
+                console.log(res.data)
+              }
+            })
+          }
+        })
+        return
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  /**
+   * 切换至个人信息界面
+   */
+  back: function() {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      isShow: "none"
     })
-  }
+  },
+  /**
+   * 切换至二维码界面
+   */
+  to: function () {
+    this.setData({
+      isShow: "block"
+    })
+  },
 })

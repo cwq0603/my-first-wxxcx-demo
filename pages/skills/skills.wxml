@@ -1,0 +1,13 @@
+<view class="content">
+  <view wx:for="{{skills}}" wx:key="{{index}}" wx:for-item="block">
+    <view class="all">
+      <view class="title" bindtap="show" data-id="{{block.id}}">{{block.title}}</view>
+      <view class="content" wx:for="{{block.content}}" wx:key="{{index}}" wx:for-item="item">
+        <view class="item">
+          <image src="../../images/icons/done.png" mode="widthFix"></image>
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

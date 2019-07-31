@@ -1,0 +1,25 @@
+.content {
+  padding: 16rpx;
+}
+
+.all {
+  border: 5rpx solid #666;
+  border-radius: 16rpx;
+  margin-bottom: 16rpx;
+  padding: 32rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  color: #999;
+}
+
+.item {
+  color: #333;
+  margin-bottom: -16rpx;
+}
+
+.item image {
+  margin: 0 0 -3rpx -16rpx;
+  width: 32rpx;
+}

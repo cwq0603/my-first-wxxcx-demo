@@ -1,13 +1,25 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="main-contain">
+
+  <view style="display:{{isShow==='block'?'none':'block'}}">
+    <view class="img" bindtap="to">
+      <image src="{{img}}" mode="{{imgMode}}"></image>
+    </view> 
+
+    <view class="contain" wx:for="{{info}}" wx:for-item="item" wx:key="{{index}}" bindtap="callMe">
+      <image src="{{item.icon}}" mode="{{imgMode}}"></image>
+      <text selectable data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class="qrCode" style="display:{{isShow}}">
+    <view class="head">添加微信号</view>
+    <view class="case">1. 长按下方二维码，保存图片</view>
+    <view class="case">2. 扫描下方二维码，添加微信</view>
+    <image src="{{qrCodeImg}}" mode="{{imgMode}}" show-menu-by-longpress></image>
+    <view class="back" catchtap="back">
+      <image src="../../images/icons/back.png" mode="{{imgMode}}"></image>
+      <text>返回</text>
+    </view>
   </view>
+  
 </view>

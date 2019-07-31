@@ -1,13 +1,47 @@
 {
   "pages": [
+    "pages/projects/projects",
+    "pages/skills/skills",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/demos/demos"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "个人简历",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Infos",
+        "iconPath": "images/tabBarIcons/icon_signal.png",
+        "selectedIconPath": "images/tabBarIcons/icon_signal_fill.png"
+      },
+      {
+        "pagePath": "pages/skills/skills",
+        "text": "Skills",
+        "iconPath": "images/tabBarIcons/icon_attestation.png",
+        "selectedIconPath": "images/tabBarIcons/icon_certification_f.png"
+      },
+      {
+        "pagePath": "pages/projects/projects",
+        "text": "Projects",
+        "iconPath": "images/tabBarIcons/icon_work.png",
+        "selectedIconPath": "images/tabBarIcons/icon_work_fill.png"
+      },
+      {
+        "pagePath": "pages/demos/demos",
+        "text": "Demos",
+        "iconPath": "images/tabBarIcons/icon_discovery.png",
+        "selectedIconPath": "images/tabBarIcons/icon_discovery_fill.png"
+      }
+    ],
+    "color": "#adadad",
+    "selectedColor": "#000"
+  }
 }
