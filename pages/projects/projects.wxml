@@ -1,8 +1,24 @@
-<view>
-  <view>
-    <view>个人作品</view>
-  </view>
-  <view>
-    <view>工作经验</view>
+<view class="container">
+  <view class="project" wx:for="{{projects}}" wx:for-item="projects" wx:key="{{index}}">
+    <view class="header">{{projects.header}}</view>
+    <view class="work" wx:for="{{projects.works}}" wx:for-item="works" wx:key="{{index}}">
+      <view class="projectName">{{works.projectName}}</view>
+      <view style="display:{{works.isShow}}">
+        <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></video>
+      </view>
+      <view class="description" wx:for="{{works.description}}" wx:for-item="description" wx:key="{{index}}">
+        <view class="title">{{description.title}}</view>
+        <view class="contents" wx:for="{{description.contents}}" wx:for-item="content" wx:key="{{index}}">
+          <view class="content">{{content}}</view>
+        </view>
+      </view>
+      <view class="infos" wx:for="{{works.infos}}" wx:for-item="info" wx:key="{{index}}">
+        <view>公司：{{info.company}}</view>
+        <view>工作时间：{{info.time}}</view>
+        <view>职位：{{info.job}}</view>
+        <view>职责：</view>
+        <view wx:for="{{info.duties}}" wx:for-item="duty" wx:key="{{index}}">{{duty}}</view>
+      </view>
+    </view>
   </view>
 </view>

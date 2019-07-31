@@ -17,8 +17,7 @@
     <view class="case">2. 扫描下方二维码，添加微信</view>
     <image src="{{qrCodeImg}}" mode="{{imgMode}}" show-menu-by-longpress></image>
     <view class="back" catchtap="back">
-      <image src="../../images/icons/back.png" mode="{{imgMode}}"></image>
-      <text>返回</text>
+      <image src="../../images/icons/back.png" mode="{{imgMode}}"></image>返回
     </view>
   </view>
   

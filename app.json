@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/projects/projects",
-    "pages/skills/skills",
+    "pages/demos/demos",
     "pages/index/index",
-    "pages/demos/demos"
+    "pages/projects/projects",
+    "pages/skills/skills"
   ],
   "window": {
     "backgroundColor": "#eee",

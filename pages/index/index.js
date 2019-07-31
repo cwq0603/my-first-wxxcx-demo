@@ -51,6 +51,11 @@ Page({
         id: '所在地',
         icon: '../../images/icons/icon_GPS.png',
         name: '南京市玄武区'
+      },
+      {
+        id: '求职岗位',
+        icon: '../../images/icons/job.png',
+        name: '前端开发工程师'
       }
     ]
   },

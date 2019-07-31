@@ -1,1 +1,51 @@
-/* pages/projects/projects.wxss */
+.container {
+  padding: 32rpx;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  font-size: 64rpx;
+  color: #aaa;
+  border: 10rpx dashed;
+  border-radius: 32rpx;
+  padding: 16rpx 32rpx;
+  margin: 32rpx 0 0;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32rpx 32rpx 0;
+}
+
+.projectName {
+  font-size: 48rpx;
+  color: #aba;
+  margin-bottom: 32rpx;
+}
+
+.description, .infos {
+  border-left: 3rpx solid #ddd;
+  padding-left: 32rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #444;
+  line-height: 64rpx;
+}
+
+.content {
+  text-indent: 60rpx;
+  line-height: 64rpx;
+}
+
+.infos view {
+  line-height: 64rpx;
+}

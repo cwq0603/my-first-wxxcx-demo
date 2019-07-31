@@ -44,9 +44,10 @@
   margin: 32rpx;
 }
 .back {
+  width: 32rpx;
   color: #666;
+  margin-left: 32rpx;
 }
 .back image {
   width: 64rpx;
-  display: inline-block;
 }
