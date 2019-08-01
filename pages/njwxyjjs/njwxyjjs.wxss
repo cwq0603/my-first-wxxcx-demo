@@ -27,3 +27,7 @@
 .btn {
   margin-top: 64rpx;
 }
+
+.btn button:first-child {
+  margin-bottom: 32rpx;
+}
