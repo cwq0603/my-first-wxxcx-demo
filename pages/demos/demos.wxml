@@ -1,0 +1,9 @@
+<view class="contain">
+  <view class="demo" wx:for="{{demos}}" wx:for-item="demo" wx:key="{{index}}" bindtap="handleClick" data-url="{{demo.url}}">
+    <view catchtap="handleClick" data-url="{{demo.url}}">demo{{demo.id}} :</view>
+    <view catchtap="handleClick" data-url="{{demo.url}}">{{demo.title}}</view>
+    <view >
+      <image src="{{url}}" mode="widthFix" catchtap="handleClick" data-url="{{demo.url}}"></image>
+    </view>
+  </view>
+</view>

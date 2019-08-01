@@ -5,7 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: '../../images/icons/right.png',
+    demos: [
+      {
+        id: 1,
+        url: '+njwxyjjs',
+        title: '南京五险一金计算'
+      },
+      {
+        id: 2,
+        url: '-qqyybfq',
+        title: 'QQ 音乐播放器'
+      }
+    ]
+  },
 
+  handleClick: function(e) {
+    const url = e.target.dataset.url
+    if (!url.indexOf('+')) {
+      const path = url.substring(1)
+      wx.navigateTo({
+        url: '../' + path + '/' + path
+      })
+    } else {
+      
+    }
+    
   },
 
   /**

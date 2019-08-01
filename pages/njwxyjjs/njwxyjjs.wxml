@@ -1,0 +1,111 @@
+<view class="contain">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="form">
+      <view class="block">
+        <text>税前工资：</text>
+        <input name="sqgz" class="salary" auto-focus value="{{sqgz}}" type="number"></input>
+      </view>
+
+      <view class="block">
+        <picker data-id="qzd" name="qzd" bindchange="handleChange" mode="selector" value="{{qzdArr[qzd]}}" range="{{qzdArr}}">
+          <view class="picker">
+            起征点：{{qzdArr[qzd]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="block">
+        <view>养老保险缴纳比例(%)：</view>
+        <view>
+          <picker data-id="oneC" name="oneC" bindchange="handleChange" mode="selector" value="{{gt[oneC]}}" range="{{gt}}">
+            <view class="picker">
+              公司：{{gt[oneC]}}
+            </view>
+          </picker>
+          <picker data-id="oneS" name="oneS" bindchange="handleChange" mode="selector" value="{{gt[oneS]}}" range="{{gt}}">
+            <view class="picker">
+              个人：{{gt[oneS]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="block">
+        <text>医疗保险缴纳比例(%)：</text>
+        <view>
+          <picker data-id="twoC" name="twoC" bindchange="handleChange" mode="selector" value="{{gt[twoC]}}" range="{{gt}}">
+            <view class="picker">
+              公司：{{gt[twoC]}}
+            </view>
+          </picker>
+          <picker data-id="twoS" name="twoS" bindchange="handleChange" mode="selector" value="{{gt[twoS]}}" range="{{gt}}">
+            <view class="picker">
+              个人：{{gt[twoS]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="block">
+        <text>失业保险缴纳比例(%)：</text>
+        <view>
+          <picker data-id="threeC" name="threeC" bindchange="handleChange" mode="selector" value="{{gt[threeC]}}" range="{{gt}}">
+            <view class="picker">
+              公司：{{gt[threeC]}}
+            </view>
+          </picker>
+          <picker data-id="threeS" name="threeS" bindchange="handleChange" mode="selector" value="{{gt[threeS]}}" range="{{gt}}">
+            <view class="picker">
+              个人：{{gt[threeS]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="block">
+        <text>工伤保险缴纳比例(%)：</text>
+        <view>
+          <picker data-id="fourC" name="fourC" bindchange="handleChange" mode="selector" value="{{gt[fourC]}}" range="{{gt}}">
+            <view class="picker">
+              公司：{{gt[fourC]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="block">
+        <text>生育保险缴纳比例(%)：</text>
+        <view>
+          <picker data-id="fiveC" name="fiveC" bindchange="handleChange" mode="selector" value="{{gt[fiveC]}}" range="{{gt}}">
+            <view class="picker">
+              公司：{{gt[fiveC]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+
+      <view class="block">
+        <text>住房公积金缴存比列(%)：</text>
+        <view>
+          <picker data-id="gjjC" name="gjjC" bindchange="handleChange" mode="selector" value="{{gjjArr[gjjC]}}" range="{{gjjArr}}">
+            <view class="picker">
+              公司：{{gjjArr[gjjC]}}
+            </view>
+          </picker>
+          <picker data-id="gjjS" name="gjjS" bindchange="handleChange" mode="selector" value="{{gjjArr[gjjC]}}" range="{{gjjArr}}">
+            <view class="picker">
+              个人：{{gjjArr[gjjC]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    
+
+    <view class="btn">
+      <button type="primary" form-type="submit">计算</button>
+      <button form-type="reset">重置</button>
+    </view>
+  </form>
+</view>
