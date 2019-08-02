@@ -46,15 +46,14 @@ Page({
             ]
           },
           {
-            projectName: '小程序：音乐播放器',
+            projectName: '小程序：哔哩哔哩弹幕视频',
             isShow: 'block',
             video: '',
             description: [
               {
                 title: '项目描述：',
                 contents: [
-                  '通过微信小程序仿写 QQ 音乐播放器',
-                  'demo 中可以看到效果'
+                  '使用微信小程序仿写哔哩哔哩弹幕视频app的首页及视频播放页面，通过调用API获取数据并展示，可在demos中查看项目'
                 ]
               }
             ]

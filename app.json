@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/demos/demos",
     "pages/index/index",
+    "pages/demos/demos",
     "pages/njwxyjjs/njwxyjjs",
     "pages/projects/projects",
-    "pages/skills/skills"
+    "pages/skills/skills",
+    "pages/bilibili/bilibili",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundColor": "#eee",
